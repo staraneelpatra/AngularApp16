@@ -16,7 +16,8 @@ const routes: Routes = [{
 },
 {
   path:"about",
-  component:AboutComponent
+  // component:AboutComponent
+  redirectTo:"signup"
 },
 {
   path:"",

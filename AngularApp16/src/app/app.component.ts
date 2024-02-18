@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SalutationPipePipe } from './salutation-pipe.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { SalutationPipePipe } from './salutation-pipe.pipe';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+constructor(private route : Router){}
+
   title = 'Angular Tutorial';
   text = "Welcome to Tutorial";
   textfromtarget = ""; 
@@ -72,5 +75,9 @@ export class AppComponent {
     }
     GetSelectedValue(data : Event){
       this.getSelectedColor = (data.target as HTMLInputElement).value;
+    }
+
+    redirect(){
+      this.route.navigate(["login"])
     }
 }
