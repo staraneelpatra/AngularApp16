@@ -16,12 +16,24 @@ const routes: Routes = [{
 },
 {
   path:"about",
-  // component:AboutComponent
+  //component:AboutComponent
   redirectTo:"signup"
 },
 {
   path:"",
   component:HomeComponent
+},
+{
+  path:"profile",
+  component:AboutComponent
+},
+{
+  path:"profile/:username",
+  component:AboutComponent
+},
+{
+  path:"profile/:username/:id",
+  component:AboutComponent
 },
 {
   path:"**",
