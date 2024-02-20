@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { SalutationPipePipe } from './salutation-pipe.pipe';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     BrowserModule,
     AppRoutingModule,
     CustomerModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
