@@ -9,4 +9,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
+  formSubmit(val : any){
+    var data = val.controls;
+    var name = data.yourname.value;
+    var email = data.email.value;
+    var mobile = data.mobile.value
+    console.log(name, email, mobile);
+  }
 }
