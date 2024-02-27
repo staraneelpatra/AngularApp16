@@ -1,23 +1,29 @@
 <div>
     <h1>Welcome To Tutorials Website.</h1> 
     
-    <div class="col-md-2">
+    <div class="col-md-6">
         <h1>Contact Form</h1>
-        <form #contactForm="ngForm" action="" class="form" (ngSubmit)="formSubmit(contactForm)">
+        <form #contactForm="ngForm" action="" class="form" (ngSubmit)="formSubmit(contactForm.value)">
             <div class="form-group">
-                <input type="text" class="form-control" name="yourname" placeholder="Enter Your Name" ngModel>
+                <input type="text" class="form-control" name="yourname" #nameValidator="ngModel" required placeholder="Enter Your Name." ngModel>
+                <span class="validationError" *ngIf="nameValidator.touched && nameValidator.invalid">
+                    Required Field.</span>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="email" placeholder="Enter Your Email" ngModel>
+                <input type="text" class="form-control" name="email" #emailValidator="ngModel" required placeholder="Enter Your Email." ngModel>
+                <span class="validationError" *ngIf="emailValidator.touched && emailValidator.invalid">
+                    Required Field.</span>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="mobile" placeholder="Enter Your Mobile" ngModel>
+                <input type="text" class="form-control" name="mobile" minlength="10" maxlength="12" #mobileValidator="ngModel" required placeholder="Enter Your Mobile." ngModel>
+                <span class="validationError" *ngIf="mobileValidator.touched && mobileValidator.invalid">
+                    Enter a valid mobile number.</span>
             </div>
 
             <div class="form-group">
-                <input type="submit" class="btn btn-success" name="Send">
+                <input type="submit" [disabled]="contactForm.invalid" class="btn btn-success" name="Send">
             </div>
         </form>
     </div>

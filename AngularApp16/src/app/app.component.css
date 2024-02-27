@@ -1,4 +1,14 @@
 .active{
     color: dodgerblue;
 }
+
 h1{color: rgb(39, 158, 13);}
+
+input.ng-touched.ng-invalid{
+    border:1px solid red;
+}
+
+input.ng-touched.ng-valid{
+    border:1px solid rgb(10, 202, 64);
+}
+.validationError{color: orange;}
