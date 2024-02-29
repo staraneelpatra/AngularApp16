@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SalutationPipePipe } from './salutation-pipe.pipe';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +10,16 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
 
-  contactForm = new FormGroup({
-    yourname : new FormControl(""),
-    email : new FormControl(""),
-    mobile : new FormControl("")
-  });
+  contactForm: FormGroup;
 
+  constructor( private fb :FormBuilder){
+    this.contactForm = fb.group({
+      yourname : ['', Validators.required],
+      email : ['', Validators.required],
+      mobile : ['', Validators.required,Validators.min(10),Validators.max(12)]
+    });
+  }
+  
   ngModeldata = "";
    users={
     name: "",
