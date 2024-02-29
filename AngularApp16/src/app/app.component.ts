@@ -14,9 +14,11 @@ export class AppComponent {
 
   constructor( private fb :FormBuilder){
     this.contactForm = fb.group({
-      yourname : ['', Validators.required],
-      email : ['', Validators.required],
-      mobile : ['', Validators.required,Validators.min(10),Validators.max(12)]
+      yourname : ['', [Validators.required,Validators.minLength(3)]],
+      // You can use Validators.Compose for Multiple Validation or
+      // just put it in array as below done for email and mobile
+      email : ['', Validators.compose([Validators.required,Validators.email])],
+      mobile : ['', [Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(10),Validators.maxLength(12)]]
     });
   }
   
@@ -27,11 +29,22 @@ export class AppComponent {
     mobile: "",
  };
 
-  formSubmit(val : any){
-    console.log(val);
-    var name = val.yourname;
-    var email = val.email;
-    var mobile = val.mobile
+  formGet(){
+    var name = this.contactForm.get("yourname")?.value;
+    var email = this.contactForm.get("email")?.value;
+    var mobile = this.contactForm.get("mobile")?.value
     console.log(name, email, mobile);    
+  }
+
+  formSet(){
+    this.contactForm.setValue({"yourname": "Bageera", "email": "Asdf@hdg.cd", "mobile":9587369458});
+  }
+
+  formPatch(){
+    this.contactForm.patchValue({"email": "Anbdfjk@hdg.cd"});
+  }
+
+  resetForm(){
+    this.contactForm.reset();
   }
 }

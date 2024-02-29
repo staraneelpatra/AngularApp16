@@ -3,7 +3,7 @@
     
     <div class="col-md-6">
         <h1>Contact Form</h1>
-        <form [formGroup]="contactForm" class="form" (ngSubmit)="formSubmit(contactForm.value); contactForm.reset()">
+        <form [formGroup]="contactForm" class="form">
             <div class="form-group">
                 <input type="text" formControlName="yourname" class="form-control" placeholder="Your Name">
             </div>
@@ -18,9 +18,11 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" [disabled]="contactForm.invalid" class="btn btn-success" name="Send">
+                <input type="submit" [disabled]="contactForm.invalid" class="btn btn-success" (click)="formGet(); contactForm.reset()" name="Send">
                 <!-- reset() and formreset() -->
-                <input type="button" class="btn btn-primary" (click)="contactForm.reset()" value="Reset">
+                <input type="button" class="btn btn-primary" (click)="resetForm()" value="Reset">
+                <a class="btn btn-primary" (click)="formSet()">SetValue</a>
+                <a class="btn btn-primary" (click)="formPatch()">PatchValue</a>
             </div>
         </form>
     </div>
