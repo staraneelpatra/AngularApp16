@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserdataService } from './userdata.service';
+import { UseraddressService } from './useraddress.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { UserdataService } from './userdata.service';
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [/*UserdataService*/],
+  providers: [/*UserdataService,*/ UseraddressService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

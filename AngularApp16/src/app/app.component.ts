@@ -3,6 +3,7 @@ import { SalutationPipePipe } from './salutation-pipe.pipe';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validator, Validators } from '@angular/forms';
 import { UserdataService } from './userdata.service';
+import { UseraddressService } from './useraddress.service';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ export class AppComponent {
     name: "",
     email: "",
     mobile: "",
+    address: ""
  };
 
 //   formGet(){
@@ -56,6 +58,7 @@ export class AppComponent {
       this.users.name = data.name;
       this.users.email = data.email;
       this.users.mobile = data.mobile;
+      this.users.address = data.address
 }
   
 }
