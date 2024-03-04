@@ -11,6 +11,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserdataService } from './userdata.service';
 import { UseraddressService } from './useraddress.service';
+import { Agent1Component } from './agent1/agent1.component';
+import { Agent2Component } from './agent2/agent2.component';
+import { BusbookingService } from './busbooking.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { UseraddressService } from './useraddress.service';
     SalutationPipePipe,
     HomeComponent,
     PagenotfoundComponent,
+    Agent1Component,
+    Agent2Component,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,7 @@ import { UseraddressService } from './useraddress.service';
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [BusbookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
