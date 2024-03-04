@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { UseraddressService } from './useraddress.service';
 
 //Module level can be done 2 ways as below line 4 and line 8 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 
 //Module level need to be declared as below and add Providers: [UserdataService] in app.module.ts
 
-@Injectable()
+//@Injectable()
 export class UserdataService {
 
   constructor(private userAddressService : UseraddressService) { }

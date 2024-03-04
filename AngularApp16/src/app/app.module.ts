@@ -27,7 +27,7 @@ import { UseraddressService } from './useraddress.service';
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [/*UserdataService,*/ UseraddressService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

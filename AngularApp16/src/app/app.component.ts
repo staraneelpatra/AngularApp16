@@ -10,7 +10,7 @@ import { UseraddressService } from './useraddress.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   //Using Service Component Level
-  providers: [UserdataService]
+  //providers: [UserdataService]
 })
 export class AppComponent {
 
