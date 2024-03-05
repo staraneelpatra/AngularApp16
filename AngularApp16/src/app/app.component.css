@@ -12,3 +12,6 @@ input.ng-touched.ng-valid{
     border:1px solid rgb(10, 202, 64);
 }
 .validationError{color: orange;}
+table, th, td {
+    border: 1px solid black;
+  }

@@ -1,41 +1,34 @@
-<!-- <div>
-    <h1>Welcome To Tutorials Website...</h1> 
-    
-    <div class="col-md-6">
-        <h1>Contact Form</h1>
-        <form [formGroup]="contactForm" class="form">
-                        <div class="form-group">
-                <input type="text" formControlName="yourname" class="form-control" placeholder="Your Name">
-            </div>
-
-            <div class="form-group">
-                <input type="text" formControlName="email" class="form-control" placeholder="Email">
-                
-            </div>
-
-            <div class="form-group">
-                <input type="text" formControlName="mobile" class="form-control" placeholder="Mobile">
-            </div>
-
-            <div class="form-group">
-                <input type="submit" [disabled]="contactForm.invalid" class="btn btn-success" (click)="formGet(); contactForm.reset()" name="Send">
-                reset() and formreset()
-                <input type="button" class="btn btn-primary" (click)="resetForm()" value="Reset">
-                <a class="btn btn-primary" (click)="formSet()">SetValue</a>
-                <a class="btn btn-primary" (click)="formPatch()">PatchValue</a>
-            </div>
-         </form>
-    </div>
-</div> 
-<h1>Service in Angular</h1>
-<h2>{{users.name}}</h2><br>
-<h2>{{users.email}}</h2><br>
-<h2>{{users.mobile}}</h2><br>
-<h2>{{users.address}}</h2>-->
-<!-- <router-outlet></router-outlet> -->
-
  <div style="text-align: center;">
-    <h1>Singleton Object in Angular</h1>
-    <app-agent1></app-agent1>
-    <app-agent2></app-agent2>
+    <h1>How to call API</h1>
+    <table border="1px solid black">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>UserName</th>
+            <th>Website</th>
+            <th>Company</th>
+            <th>Address</th>
+        </tr>
+        <tr *ngFor="let user of userdata">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.website}}</td>
+            <td>{{user.company.name}},
+                {{user.company.catchPhrase}},
+                {{user.company.bs}}
+            </td>
+            <td>{{user.address.street}},
+                {{user.address.suite}},
+                {{user.address.city}},
+                {{user.address.zipcode}},
+                {{user.address.geo.lat}},
+                {{user.address.geo.lng}},
+            </td>
+        </tr>
+    </table>
 </div>

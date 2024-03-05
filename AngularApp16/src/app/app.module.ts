@@ -14,6 +14,7 @@ import { UseraddressService } from './useraddress.service';
 import { Agent1Component } from './agent1/agent1.component';
 import { Agent2Component } from './agent2/agent2.component';
 import { BusbookingService } from './busbooking.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BusbookingService } from './busbooking.service';
     CustomerModule,
     FormsModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [BusbookingService],
   bootstrap: [AppComponent]
