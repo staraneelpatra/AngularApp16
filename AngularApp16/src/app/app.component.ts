@@ -16,9 +16,9 @@ export class AppComponent {
 
     userdata: any =[];
     constructor(private userdataservice :UserdataService){     
-     let userdata = this.userdataservice.getUserData().subscribe(data=>{
-      console.log(data);
-      this.userdata = data;
+     let userdata = this.userdataservice.getUserData().subscribe(usersdata=>{
+      console.log(usersdata);
+      this.userdata = usersdata;
      })
 }
   
