@@ -11,7 +11,7 @@
             <th>Company</th>
             <th>Address</th>
         </tr>
-        <tr *ngFor="let user of userdata">
+        <tr *ngFor="let user of userdata$ | async">
             <td>{{user.id}}</td>
             <td>{{user.name}}</td>
             <td>{{user.email}}</td>

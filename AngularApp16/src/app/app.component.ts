@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validator, Validators } from '@angular/forms';
 import { UserdataService } from './userdata.service';
 import { UseraddressService } from './useraddress.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,8 @@ import { UseraddressService } from './useraddress.service';
 })
 export class AppComponent {
 
-    userdata: any =[];
+    userdata$: Observable<any>;
     constructor(private userdataservice :UserdataService){     
-     let userdata = this.userdataservice.getUserData().subscribe(usersdata=>{
-      console.log(usersdata);
-      this.userdata = usersdata;
-     })
-}
-  
+    this.userdata$ = this.userdataservice.getUserData();
+}  
 }
